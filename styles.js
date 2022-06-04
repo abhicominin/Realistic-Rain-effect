@@ -31,7 +31,7 @@ let scene,camera, renderer, cloudParticles = [], flash, rain, rainGeo, rainCount
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.body.appendChild(renderer.domElement);
 
-      rainGeo = new THREE.Geometry();
+      rainGeo = new THREE.Geometry();//For latest releases this wont work
       for(let i=0;i<rainCount;i++) {
         rainDrop = new THREE.Vector3(
           Math.random() * 400 -200,
@@ -58,10 +58,10 @@ let scene,camera, renderer, cloudParticles = [], flash, rain, rainGeo, rainCount
           transparent: true
         });
 
-        for(let p=0; p<25; p++) {
+        for(let p=0; p<35; p++) {//Increasing this value will increase the number of Clouds and will make it more dense
           let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
           cloud.position.set(
-            Math.random()*800 -400,
+            Math.random()*800 -400,//If Clouds are made more dense it could be helpful in spreading them for more expanded view and clarity
             500,
             Math.random()*500 - 450
           );
@@ -89,7 +89,7 @@ let scene,camera, renderer, cloudParticles = [], flash, rain, rainGeo, rainCount
       });
       rainGeo.verticesNeedUpdate = true;
       rain.rotation.y +=0.002;
-      if(Math.random() > 0.93 || flash.power > 100) {
+      if(Math.random() > 0.93 || flash.power > 100) {//First condition specifies the frequency and second one specifies the Intensity of the Flashlight
         if(flash.power < 100) 
           flash.position.set(
             Math.random()*400,
