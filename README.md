@@ -1,3 +1,2 @@
 # Realistic-Rain-effect
-Caution:
-This work uses the r121 release of Three.js which supported the use of Geometry Constructor for custom geometries ,new releases will be using BufferGeometry instead, a few replacements for these can be there.
+Caution 🚨: This work utilizes the outdated r121 release of Three.js, which utilizes the Geometry Constructor for custom geometries. However, newer releases have replaced this method with BufferGeometry 🔧. Please note that some adjustments may be necessary when using this code with newer versions of Three.js
